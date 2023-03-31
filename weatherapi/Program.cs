@@ -35,7 +35,7 @@ var searchService = new SearchService();
 app.MapGet("/search", (string query) =>
 {
     var results = searchService.SearchLocalFilesAndApps(query);
-    return results;
+    return Results.Ok(results);
 })
 .WithName("SearchLocalFilesAndApps")
 .WithOpenApi();
